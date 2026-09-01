@@ -9,7 +9,7 @@ project {
         name = "Build"
 
         vcs {
-            root(GitVRoot {
+            root(GitVcsRoot {
                 id = "GitHubFork"
                 name = "example-teamcity"
                 url = "https://github.com/Aleksandr-afk-22/example-teamcity.git"
