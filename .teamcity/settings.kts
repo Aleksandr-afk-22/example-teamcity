@@ -6,12 +6,12 @@ version = "2024.07"
 
 project {
     buildType {
-        id = "Build"
+        id("Build")
         name = "Build"
 
         vcs {
             root(GitVcsRoot {
-                id = "GitHubFork"
+                id("GitHubFork")
                 name = "example-teamcity"
                 url = "https://github.com/Aleksandr-afk-22/example-teamcity.git"
             })
@@ -19,7 +19,7 @@ project {
 
         steps {
             maven {
-                id = "MavenDeploy"
+                id("MavenDeploy")
                 name = "Maven Deploy"
                 goals = "clean deploy"
                 conditions {
@@ -27,11 +27,13 @@ project {
                 }
             }
             maven {
-                id = "MavenTest"
+                id("MavenTest")
                 name = "Maven Test"
                 goals = "clean test"
                 conditions {
-                    notEquals("teamcity.build.branch", "master")
+                    not {
+                        equals("teamcity.build.branch", "master")
+                    }
                 }
             }
         }
