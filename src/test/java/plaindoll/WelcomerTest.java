@@ -1,7 +1,7 @@
 package plaindoll;
 
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
@@ -34,6 +34,12 @@ public class WelcomerTest {
 	}
 	@Test
 	public void welcomerSaysHunterInNewMethod() {
-	assertThat(welcomer.sayHunter(), containsString("hunter"));
+		assertThat(welcomer.sayHunter(), containsString("hunter"));
+	}
+	
+	// НОВЫЙ ТЕСТ ДЛЯ ЗАДАНИЯ
+	@Test
+	public void welcomerSaysHunterInReply() {
+		assertThat(welcomer.reply(), containsString("hunter"));
 	}
 }
