@@ -1,6 +1,6 @@
-import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.*
+import jetbrains.buildServer.configs.kotlin.v2024_07.*
+import jetbrains.buildServer.configs.kotlin.v2024_07.vcs.*
+import jetbrains.buildServer.configs.kotlin.v2024_07.buildSteps.*
 
 version = "2024.07"
 
