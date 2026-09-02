@@ -11,7 +11,6 @@ project {
 
         vcs {
             root(GitVcsRoot {
-                id("GitHubFork")
                 name = "example-teamcity"
                 url = "https://github.com/Aleksandr-afk-22/example-teamcity.git"
             })
@@ -19,7 +18,6 @@ project {
 
         steps {
             maven {
-                id("MavenDeploy")
                 name = "Maven Deploy"
                 goals = "clean deploy"
                 conditions {
@@ -27,13 +25,10 @@ project {
                 }
             }
             maven {
-                id("MavenTest")
                 name = "Maven Test"
                 goals = "clean test"
                 conditions {
-                    not {
-                        equals("teamcity.build.branch", "master")
-                    }
+                    notEquals("teamcity.build.branch", "master")
                 }
             }
         }
