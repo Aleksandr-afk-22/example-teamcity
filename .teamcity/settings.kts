@@ -1,11 +1,12 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.*
 
 version = "2024.07"
 
 project {
     buildType {
-        id("Build")
+        id = "Build"
         name = "Build"
 
         vcs {
